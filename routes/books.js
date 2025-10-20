@@ -29,18 +29,9 @@ router.get('/api', (req, res) => {
 
   if (filter === 'available') {
     filteredBooks = books.filter(book => book.available);
-  } else if (filter === 'overdue') {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    filteredBooks = books.filter(book => {
-      if (!book.available && book.returnDate) {
-        const returnDate = new Date(book.returnDate);
-        returnDate.setHours(0, 0, 0, 0);
-        return returnDate < today;
-      }
-      return false;
-    });
+  } else if (filter === 'byReturnDate') {
+    filteredBooks = books.filter(book => !book.available && book.returnDate);
+    filteredBooks.sort((a, b) => new Date(a.returnDate) - new Date(b.returnDate));
   }
 
   res.json(filteredBooks);
@@ -121,7 +112,6 @@ router.post('/:id/borrow', (req, res) => {
     return res.status(400).json({ error: 'Укажите имя читателя и дату возврата' });
   }
 
-  // Выдача книги
   books[bookIndex].available = false;
   books[bookIndex].borrower = borrower;
   books[bookIndex].returnDate = returnDate;

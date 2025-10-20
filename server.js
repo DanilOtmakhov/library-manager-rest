@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
+const booksRouter = require("./routes/books");
 
 const PORT = 3000;
 
@@ -10,10 +11,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use("/books", require("./routes/books"));
+app.use("/books", booksRouter);
 
 app.get("/", (req, res) => {
-  res.render("index", { title: "Library Home" });
+  res.render("index");
 });
 
 app.listen(PORT, () => {

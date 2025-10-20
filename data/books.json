@@ -1,137 +1,137 @@
 [
-    {
-        "id": 1,
-        "title": "Мастер и Маргарита",
-        "author": "М. Булгаков",
-        "year": 1966,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    },
-    {
-        "id": 2,
-        "title": "Преступление и наказание",
-        "author": "Фёдор Достоевский",
-        "year": 1866,
-        "available": false,
-        "borrower": "Анна Иванова",
-        "returnDate": "2025-10-20"
-    },
-    {
-        "id": 3,
-        "title": "Война и мир",
-        "author": "Лев Толстой",
-        "year": 1869,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    },
-    {
-        "id": 4,
-        "title": "1984",
-        "author": "Джордж Оруэлл",
-        "year": 1949,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    },
-    {
-        "id": 5,
-        "title": "Улисс",
-        "author": "Джеймс Джойс",
-        "year": 1922,
-        "available": false,
-        "borrower": "Иван Петров",
-        "returnDate": "2025-11-05"
-    },
-    {
-        "id": 6,
-        "title": "Гордость и предубеждение",
-        "author": "Джейн Остин",
-        "year": 1813,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    },
-    {
-        "id": 7,
-        "title": "Моби Дик",
-        "author": "Герман Мелвилл",
-        "year": 1851,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    },
-    {
-        "id": 8,
-        "title": "Великий Гэтсби",
-        "author": "Фрэнсис Скотт Фицджеральд",
-        "year": 1925,
-        "available": false,
-        "borrower": "Сергей Кузнецов",
-        "returnDate": "2025-10-30"
-    },
-    {
-        "id": 9,
-        "title": "Сто лет одиночества",
-        "author": "Габриэль Гарсиа Маркес",
-        "year": 1967,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    },
-    {
-        "id": 10,
-        "title": "Лолита",
-        "author": "Владимир Набоков",
-        "year": 1955,
-        "available": false,
-        "borrower": "Мария Смирнова",
-        "returnDate": "2025-11-15"
-    },
-    {
-        "id": 11,
-        "title": "Анна Каренина",
-        "author": "Лев Толстой",
-        "year": 1877,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    },
-    {
-        "id": 12,
-        "title": "Фауст",
-        "author": "Иоганн Вольфганг фон Гёте",
-        "year": 1808,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    },
-    {
-        "id": 13,
-        "title": "Братья Карамазовы",
-        "author": "Фёдор Достоевский",
-        "year": 1880,
-        "available": false,
-        "borrower": "Елена Васильева",
-        "returnDate": "2025-10-25"
-    },
-    {
-        "id": 14,
-        "title": "Отцы и дети",
-        "author": "Иван Тургенев",
-        "year": 1862,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    },
-    {
-        "id": 15,
-        "title": "Дон Кихот",
-        "author": "Мигель де Сервантес",
-        "year": 1605,
-        "available": true,
-        "borrower": null,
-        "returnDate": null
-    }
+  {
+    "id": 1,
+    "title": "Мастер и Маргарита",
+    "author": "М. Булгаков",
+    "year": 1966,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 2,
+    "title": "Преступление и наказание",
+    "author": "Фёдор Достоевский",
+    "year": 1866,
+    "available": false,
+    "borrower": "Анна Иванова",
+    "returnDate": "2025-10-20"
+  },
+  {
+    "id": 3,
+    "title": "Война и мир",
+    "author": "Лев Толстой",
+    "year": 1869,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 4,
+    "title": "1984",
+    "author": "Джордж Оруэлл",
+    "year": 1949,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 5,
+    "title": "Улисс",
+    "author": "Джеймс Джойс",
+    "year": 1922,
+    "available": false,
+    "borrower": "Иван Петров",
+    "returnDate": "2025-11-05"
+  },
+  {
+    "id": 6,
+    "title": "Гордость и предубеждение",
+    "author": "Джейн Остин",
+    "year": 1813,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 7,
+    "title": "Моби Дик",
+    "author": "Герман Мелвилл",
+    "year": 1851,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 8,
+    "title": "Великий Гэтсби",
+    "author": "Фрэнсис Скотт Фицджеральд",
+    "year": 1925,
+    "available": false,
+    "borrower": "Сергей Кузнецов",
+    "returnDate": "2025-10-30"
+  },
+  {
+    "id": 9,
+    "title": "Сто лет одиночества",
+    "author": "Габриэль Гарсиа Маркес",
+    "year": 1967,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 10,
+    "title": "Лолита",
+    "author": "Владимир Набоков",
+    "year": 1955,
+    "available": false,
+    "borrower": "Мария Смирнова",
+    "returnDate": "2025-11-15"
+  },
+  {
+    "id": 11,
+    "title": "Анна Каренина",
+    "author": "Лев Толстой",
+    "year": 1877,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 12,
+    "title": "Фауст",
+    "author": "Иоганн Вольфганг фон Гёте",
+    "year": 1808,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 13,
+    "title": "Братья Карамазовы",
+    "author": "Фёдор Достоевский",
+    "year": 1880,
+    "available": false,
+    "borrower": "Елена Васильева",
+    "returnDate": "2025-10-25"
+  },
+  {
+    "id": 14,
+    "title": "Отцы и дети",
+    "author": "Иван Тургенев",
+    "year": 1862,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 15,
+    "title": "Дон Кихот",
+    "author": "Мигель де Сервантес",
+    "year": 1605,
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  }
 ]

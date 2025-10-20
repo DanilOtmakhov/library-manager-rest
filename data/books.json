@@ -13,9 +13,9 @@
     "title": "Преступление и наказание",
     "author": "Фёдор Достоевский",
     "year": 1866,
-    "available": false,
-    "borrower": "Анна Иванова",
-    "returnDate": "2025-10-20"
+    "available": true,
+    "borrower": null,
+    "returnDate": null
   },
   {
     "id": 3,
@@ -40,9 +40,9 @@
     "title": "Улисс",
     "author": "Джеймс Джойс",
     "year": 1922,
-    "available": false,
-    "borrower": "Иван Петров",
-    "returnDate": "2025-11-05"
+    "available": true,
+    "borrower": null,
+    "returnDate": null
   },
   {
     "id": 6,
@@ -67,9 +67,9 @@
     "title": "Великий Гэтсби",
     "author": "Фрэнсис Скотт Фицджеральд",
     "year": 1925,
-    "available": false,
-    "borrower": "Сергей Кузнецов",
-    "returnDate": "2025-10-30"
+    "available": true,
+    "borrower": null,
+    "returnDate": null
   },
   {
     "id": 9,

@@ -1,3 +1,5 @@
+import { showNotification } from './notification.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   loadBooks();
   initializeEventListeners();
@@ -86,7 +88,7 @@ function renderBooks(books) {
       <td>${formattedDate}</td>
       <td>
         <div class="action-buttons">
-          <button class="btn-action btn-edit" onclick="showEditModal(${book.id})">
+          <button class="btn-action btn-edit" onclick="location.href='/books/${book.id}'">
             <i class="fa-solid fa-edit"></i> Изменить
           </button>
           ${book.available
@@ -111,6 +113,8 @@ function renderBooks(books) {
 function showAddBookModal() {
   document.getElementById('addBookDialog').showModal();
 }
+
+window.showAddBookModal = showAddBookModal;
 
 function closeAddBookModal() {
   document.getElementById('addBookDialog').close();
@@ -155,10 +159,14 @@ function showBorrowModal(bookId) {
   document.getElementById('borrowDialog').showModal();
 }
 
+window.showBorrowModal = showBorrowModal;
+
 function closeBorrowModal() {
   document.getElementById('borrowDialog').close();
   document.getElementById('borrowForm').reset();
 }
+
+window.closeBorrowModal = closeBorrowModal;
 
 async function borrowBook() {
   const bookId = document.getElementById('borrowBookId').value;
@@ -207,52 +215,7 @@ async function returnBook(bookId) {
   }
 }
 
-function showEditModal(bookId) {
-  fetch(`/books/api`)
-    .then(res => res.json())
-    .then(books => {
-      const book = books.find(b => b.id === bookId);
-      if (book) {
-        document.getElementById('editBookId').value = book.id;
-        document.getElementById('editTitle').value = book.title;
-        document.getElementById('editAuthor').value = book.author;
-        document.getElementById('editYear').value = book.year;
-        document.getElementById('editDialog').showModal();
-      }
-    });
-}
-
-function closeEditModal() {
-  document.getElementById('editDialog').close();
-  document.getElementById('editForm').reset();
-}
-
-async function editBook() {
-  const bookId = document.getElementById('editBookId').value;
-  const title = document.getElementById('editTitle').value;
-  const author = document.getElementById('editAuthor').value;
-  const year = parseInt(document.getElementById('editYear').value);
-
-  try {
-    const response = await fetch(`/books/${bookId}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, author, year })
-    });
-
-    if (response.ok) {
-      closeEditModal();
-      loadBooks();
-      showNotification('Книга успешно обновлена!', 'success');
-    } else {
-      const error = await response.json();
-      alert('Ошибка: ' + error.error);
-    }
-  } catch (error) {
-    console.error('Ошибка редактирования книги:', error);
-    alert('Не удалось обновить книгу');
-  }
-}
+window.returnBook = returnBook;
 
 async function deleteBook(bookId) {
   if (!confirm('Вы уверены, что хотите удалить эту книгу? Это действие необратимо.')) return;
@@ -275,18 +238,4 @@ async function deleteBook(bookId) {
   }
 }
 
-function showNotification(message, type = 'success') {
-  const notification = document.createElement('div');
-  notification.className = `notification notification-${type}`;
-  notification.innerHTML = `
-    <i class="fa-solid fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
-    ${message}
-  `;
-
-  document.body.appendChild(notification);
-  setTimeout(() => notification.classList.add('show'), 10);
-  setTimeout(() => {
-    notification.classList.remove('show');
-    setTimeout(() => notification.remove(), 300);
-  }, 3000);
-}
+window.deleteBook = deleteBook;

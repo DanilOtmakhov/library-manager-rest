@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
-/* Общие стили */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +14,6 @@ body {
   min-height: 100vh;
 }
 
-/* Контейнер */
 .container {
   max-width: 80%;
   margin: 60px auto;
@@ -26,7 +24,6 @@ body {
   text-align: center;
 }
 
-/* Заголовки */
 header h1 {
   font-size: 2em;
   color: #333;
@@ -49,7 +46,6 @@ header h1 i {
   line-height: 1.6;
 }
 
-/* Кнопки */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -81,7 +77,6 @@ header h1 i {
   box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-/* Адаптивность */
 @media (max-width: 900px) {
   .container {
     max-width: 90%;
@@ -119,9 +114,6 @@ header h1 i {
   }
 }
 
-/* Дополнительные стили для страницы books */
-
-/* Контейнер страницы книг */
 .books-page-container {
   max-width: 95%;
   padding: 40px 30px;
@@ -145,7 +137,6 @@ header h1 i {
   background-color: #5a6268;
 }
 
-/* Панель управления */
 .controls-panel {
   display: flex;
   justify-content: space-between;
@@ -225,7 +216,7 @@ header h1 i {
 
 .books-table th {
   padding: 16px 12px;
-  text-align: left;
+  text-align: center;
   font-weight: 600;
   font-size: 0.9em;
   text-transform: uppercase;
@@ -262,7 +253,6 @@ header h1 i {
   font-size: 0.95em;
 }
 
-/* Статусы книг */
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -295,7 +285,6 @@ header h1 i {
   50% { opacity: 0.7; }
 }
 
-/* Кнопки действий */
 .action-buttons {
   display: flex;
   gap: 6px;
@@ -544,7 +533,6 @@ header h1 i {
   font-size: 1.4em;
 }
 
-/* Адаптивность для мобильных */
 @media (max-width: 768px) {
   .books-page-container {
     max-width: 95%;
@@ -624,5 +612,94 @@ header h1 i {
   .books-table td {
     font-size: 0.8em;
     padding: 8px 6px;
+  }
+}
+
+.book-page header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.book-page header .btn-back {
+  background-color: #6c757d;
+  font-weight: 500;
+  padding: 10px 18px;
+}
+
+.book-page header .btn-back:hover {
+  background-color: #5a6268;
+}
+
+.book-page .book-details {
+  text-align: left;
+  margin-bottom: 30px;
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.book-page .book-details h2 {
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.book-page .book-details p {
+  margin-bottom: 8px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.book-page .book-edit {
+  text-align: left;
+  margin-top: 30px;
+  background: #f9fafb;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.book-page .book-edit h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.book-page .book-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.book-page .btn-borrow,
+.book-page .btn-return {
+  padding: 12px 25px;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.book-page .modal-dialog {
+  max-width: 420px;
+}
+
+@media (max-width: 600px) {
+  .book-page header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .book-page .book-details,
+  .book-page .book-edit {
+    padding: 15px;
+  }
+
+  .book-page .btn-borrow,
+  .book-page .btn-return {
+    width: 100%;
   }
 }

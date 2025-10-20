@@ -121,6 +121,8 @@ function closeAddBookModal() {
   document.getElementById('addBookForm').reset();
 }
 
+window.closeAddBookModal = closeAddBookModal;
+
 async function addBook() {
   const form = document.getElementById('addBookForm');
   const formData = new FormData(form);

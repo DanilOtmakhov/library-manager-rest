@@ -1,105 +1,139 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= book.title %> - Карточка книги</title>
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
-  <link rel="stylesheet" href="/styles/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-  <div class="container book-page">
-    <header>
-      <h1><i class="fa-solid fa-book"></i> <%= book.title %></h1>
-      <a href="/books" class="btn btn-back">
-        <i class="fa-solid fa-arrow-left"></i> Назад к списку
-      </a>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= book.title %> - Карточка книги</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container book-page">
+      <header>
+        <h1><i class="fa-solid fa-book"></i> <%= book.title %></h1>
+        <a href="/books" class="btn btn-back">
+          <i class="fa-solid fa-arrow-left"></i> Назад к списку
+        </a>
+      </header>
 
-    <section class="book-details">
-      <h2>Информация о книге</h2>
-      <p><strong>Автор:</strong> <%= book.author %></p>
-      <p><strong>Год издания:</strong> <%= book.year %></p>
+      <section class="book-details">
+        <h2>Информация о книге</h2>
+        <p><strong>Автор:</strong> <%= book.author %></p>
+        <p><strong>Год издания:</strong> <%= book.year %></p>
 
-      <p>
-        <strong>Статус:</strong>
-        <% if (book.available) { %>
+        <p>
+          <strong>Статус:</strong>
+          <% if (book.available) { %>
           <span class="status-badge status-available">В наличии</span>
-        <% } else { %>
-          <% const overdue = new Date(book.returnDate) < new Date(); %>
-          <span class="status-badge <%= overdue ? 'status-overdue' : 'status-borrowed' %>">
+          <% } else { %> <% const overdue = new Date(book.returnDate) < new
+          Date(); %>
+          <span
+            class="status-badge <%= overdue ? 'status-overdue' : 'status-borrowed' %>"
+          >
             <%= overdue ? 'Просрочена' : 'Выдана' %>
           </span>
-        <% } %>
-      </p>
+          <% } %>
+        </p>
 
-      <% if (!book.available) { %>
+        <% if (!book.available) { %>
         <p><strong>Читатель:</strong> <%= book.borrower %></p>
-        <p><strong>Дата возврата:</strong> <%= new Date(book.returnDate).toLocaleDateString('ru-RU') %></p>
-      <% } %>
-    </section>
+        <p>
+          <strong>Дата возврата:</strong> <%= new
+          Date(book.returnDate).toLocaleDateString('ru-RU') %>
+        </p>
+        <% } %>
+      </section>
 
-    <hr style="margin: 25px 0; border: none; border-top: 1px solid #ccc;">
+      <hr style="margin: 25px 0; border: none; border-top: 1px solid #ccc" />
 
-    <section class="book-edit">
-      <h2><i class="fa-solid fa-pen-to-square"></i> Редактировать книгу</h2>
-      <form id="editForm" class="modal-form">
-        <input type="hidden" id="bookId" value="<%= book.id %>">
+      <section class="book-edit">
+        <h2><i class="fa-solid fa-pen-to-square"></i> Редактировать книгу</h2>
+        <form id="editForm" class="modal-form">
+          <input type="hidden" id="bookId" value="<%= book.id %>" />
 
-        <div class="form-group">
-          <label for="title"><i class="fa-solid fa-heading"></i> Название:</label>
-          <input type="text" id="title" value="<%= book.title %>" required>
-        </div>
+          <div class="form-group">
+            <label for="title"
+              ><i class="fa-solid fa-heading"></i> Название:</label
+            >
+            <input type="text" id="title" value="<%= book.title %>" required />
+          </div>
 
-        <div class="form-group">
-          <label for="author"><i class="fa-solid fa-user-pen"></i> Автор:</label>
-          <input type="text" id="author" value="<%= book.author %>" required>
-        </div>
+          <div class="form-group">
+            <label for="author"
+              ><i class="fa-solid fa-user-pen"></i> Автор:</label
+            >
+            <input
+              type="text"
+              id="author"
+              value="<%= book.author %>"
+              required
+            />
+          </div>
 
-        <div class="form-group">
-          <label for="year"><i class="fa-solid fa-calendar"></i> Год издания:</label>
-          <input type="number" id="year" value="<%= book.year %>" min="1000" max="2100" required>
-        </div>
+          <div class="form-group">
+            <label for="year"
+              ><i class="fa-solid fa-calendar"></i> Год издания:</label
+            >
+            <input
+              type="number"
+              id="year"
+              value="<%= book.year %>"
+              min="1000"
+              max="2100"
+              required
+            />
+          </div>
 
-        <button type="submit" class="btn btn-primary">
-          <i class="fa-solid fa-save"></i> Сохранить
-        </button>
-      </form>
-    </section>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-save"></i> Сохранить
+          </button>
+        </form>
+      </section>
 
-    <section class="book-actions" style="margin-top: 30px;">
-      <% if (book.available) { %>
+      <section class="book-actions" style="margin-top: 30px">
+        <% if (book.available) { %>
         <button class="btn btn-borrow" onclick="showBorrowForm()">
           <i class="fa-solid fa-hand-holding-heart"></i> Выдать книгу
         </button>
-      <% } else { %>
+        <% } else { %>
         <button class="btn btn-return" onclick="returnBook(<%= book.id %>)">
           <i class="fa-solid fa-undo"></i> Вернуть книгу
         </button>
-      <% } %>
-    </section>
-  </div>
-
-  <dialog id="borrowDialog" class="modal-dialog">
-    <div class="modal-header">
-      <h2><i class="fa-solid fa-hand-holding-heart"></i> Выдать книгу</h2>
-      <button class="close-btn" onclick="closeBorrowModal()"><i class="fa-solid fa-times"></i></button>
+        <% } %>
+      </section>
     </div>
-    <form id="borrowForm" class="modal-form">
-      <input type="hidden" id="borrowBookId" value="<%= book.id %>">
-      <div class="form-group">
-        <label for="borrower"><i class="fa-solid fa-user"></i> Имя читателя:</label>
-        <input type="text" id="borrower" required placeholder="Введите имя">
-      </div>
-      <div class="form-group">
-        <label for="returnDate"><i class="fa-solid fa-calendar-days"></i> Дата возврата:</label>
-        <input type="date" id="returnDate" required>
-      </div>
-      <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Выдать</button>
-    </form>
-  </dialog>
 
-  <script type="module" src="/scripts/book.js"></script>
-</body>
+    <dialog id="borrowDialog" class="modal-dialog">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-hand-holding-heart"></i> Выдать книгу</h2>
+        <button class="close-btn" onclick="closeBorrowModal()">
+          <i class="fa-solid fa-times"></i>
+        </button>
+      </div>
+      <form id="borrowForm" class="modal-form">
+        <input type="hidden" id="borrowBookId" value="<%= book.id %>" />
+        <div class="form-group">
+          <label for="borrower"
+            ><i class="fa-solid fa-user"></i> Имя читателя:</label
+          >
+          <input type="text" id="borrower" required placeholder="Введите имя" />
+        </div>
+        <div class="form-group">
+          <label for="returnDate"
+            ><i class="fa-solid fa-calendar-days"></i> Дата возврата:</label
+          >
+          <input type="date" id="returnDate" required />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fa-solid fa-check"></i> Выдать
+        </button>
+      </form>
+    </dialog>
+
+    <script type="module" src="/scripts/book.js"></script>
+  </body>
 </html>

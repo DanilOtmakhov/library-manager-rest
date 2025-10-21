@@ -4,9 +4,9 @@
     "title": "Мастер и Маргарита",
     "author": "М. Булгаков",
     "year": 1966,
-    "available": true,
-    "borrower": null,
-    "returnDate": null
+    "available": false,
+    "borrower": "Иван Иванов",
+    "returnDate": "2025-10-27"
   },
   {
     "id": 2,
